@@ -1,0 +1,72 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: right;
+}
+
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2em;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.controls input,
+.controls button {
+  margin-bottom: 2em;
+  font-family: inherit;
+}
+
+input[type="color"] {
+  width: 40px;
+  height: 40px;
+  margin-inline: auto;
+}
+
+.board {
+  width: 600px;
+  border: 1px solid rgba(128, 128, 128, 0.25);
+}
+
+.board__row {
+  display: flex;
+}
+
+.board__cell {
+  flex: 1;
+  aspect-ratio: 1;
+}
+
+.board__cell[data-painted] {
+  background-color: black;
+}
+
+.board.grid-lines .board__cell {
+  outline: 1px solid rgba(128, 128, 128, 0.25);
+}
+
+.active {
+  box-shadow: 0 0 0 3px green;
+}
